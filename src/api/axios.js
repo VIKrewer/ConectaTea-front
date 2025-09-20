@@ -2,10 +2,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: "https://conectatea-back.onrender.com/api", 
 });
 
-// sempre adiciona o token do localStorage
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("conectatea_token");
   if (token) {
